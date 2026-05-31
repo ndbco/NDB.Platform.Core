@@ -1,0 +1,76 @@
+<Project>
+
+  <!--
+    Centralized Package Management (CPM) — versi paket di-deklarasikan di sini sekali,
+    csproj tinggal pakai <PackageReference Include="..."/> tanpa Version.
+    Ref: https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management
+  -->
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup Label="Microsoft Extensions">
+    <PackageVersion Include="Microsoft.Extensions.Caching.Abstractions" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="8.10.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup Label="Mediator (CQRS)">
+    <!-- Mediator.SourceGenerator: compile-time generation. TDES pakai 2.1.* -->
+    <PackageVersion Include="Mediator.SourceGenerator" Version="2.1.7" />
+    <PackageVersion Include="Mediator.Abstractions" Version="2.1.7" />
+  </ItemGroup>
+
+  <ItemGroup Label="Mapster (Mapping)">
+    <!-- Mapster 10.x = latest dipakai TDES.Shared -->
+    <PackageVersion Include="Mapster" Version="10.0.7" />
+    <PackageVersion Include="Mapster.DependencyInjection" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Label="Validation">
+    <PackageVersion Include="FluentValidation" Version="11.10.0" />
+    <PackageVersion Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="Hashing &amp; Crypto">
+    <PackageVersion Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageVersion Include="Blake3" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup Label="Excel (OpenXml)">
+    <PackageVersion Include="DocumentFormat.OpenXml" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="ID Generators">
+    <PackageVersion Include="Nanoid" Version="3.0.0" />
+    <PackageVersion Include="Ulid" Version="1.3.4" />
+    <PackageVersion Include="IdGen" Version="3.0.7" />
+  </ItemGroup>
+
+  <ItemGroup Label="Roslyn Analyzer">
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="Build &amp; Diagnostic">
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="Test Framework">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageVersion Include="xunit" Version="2.9.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageVersion Include="FluentAssertions" Version="6.12.1" />
+    <!-- FluentAssertions 7+ jadi commercial — stay di 6.12 -->
+    <PackageVersion Include="NSubstitute" Version="5.1.0" />
+    <PackageVersion Include="NSubstitute.Analyzers.CSharp" Version="1.0.17" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+    <PackageVersion Include="coverlet.msbuild" Version="6.0.2" />
+  </ItemGroup>
+
+</Project>

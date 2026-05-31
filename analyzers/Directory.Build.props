@@ -1,0 +1,10 @@
+<Project>
+  <!--
+    Override Directory.Build.props dari parent untuk Roslyn analyzer project.
+    Analyzer WAJIB target netstandard2.0 (requirement Roslyn).
+    Disable CentralPackageTransitivePinningEnabled supaya netstandard2.0 bisa di-resolve.
+  -->
+  <PropertyGroup>
+    <!-- Stop MSBuild dari inherit Directory.Build.props ke atas -->
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>NDB.Platform.Core</PackageId>
+    <Title>NDB Platform Core</Title>
+    <Description>
+      Foundation library for all project NDB: Abstraction (Result factory, markers, DTOs),
+      CQRS (Mediator.SourceGenerator setup + pipeline behaviors), Kit (Mapster, Excel, Guards,
+      Crypto, Format, Parse helpers), dan Http (BaseApiService + Microsoft.Extensions.Http.Resilience).
+    </Description>
+    <RootNamespace>NDB.Platform</RootNamespace>
+    <AssemblyName>NDB.Platform.Core</AssemblyName>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package Assets">
+    <None Include="../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup Label="Mediator (CQRS)">
+    <!-- Mediator.Abstractions: IMediator, ICommand, IQuery, IPipelineBehavior interfaces -->
+    <PackageReference Include="Mediator.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup Label="Mapping">
+    <PackageReference Include="Mapster" />
+    <PackageReference Include="Mapster.DependencyInjection" />
+  </ItemGroup>
+
+  <ItemGroup Label="HTTP">
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" />
+  </ItemGroup>
+
+  <ItemGroup Label="Validation">
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+  </ItemGroup>
+
+  <ItemGroup Label="Crypto / Hashing">
+    <PackageReference Include="BCrypt.Net-Next" />
+    <PackageReference Include="Blake3" />
+  </ItemGroup>
+
+  <ItemGroup Label="ID Generators">
+    <PackageReference Include="Nanoid" />
+    <PackageReference Include="Ulid" />
+    <PackageReference Include="IdGen" />
+  </ItemGroup>
+
+  <ItemGroup Label="Analyzer Reference">
+    <ProjectReference Include="..\analyzers\NDB.Platform.Core.Analyzers.csproj"
+                      OutputItemType="Analyzer"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup Label="Excel">
+    <PackageReference Include="DocumentFormat.OpenXml" />
+  </ItemGroup>
+
+  <ItemGroup Label="DI / Options / Logging / Caching">
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+
+</Project>
